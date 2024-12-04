@@ -1,0 +1,59 @@
+.listCard-button {
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-start; /* Sử dụng flex-start thay vì start */
+  padding: 0;
+  height: 450px;
+  overflow-y: auto;
+}
+
+.card-button {
+  margin: 0 20px 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm chuyển động mượt */
+
+  .ant-card-body {
+      display: flex;
+      align-items: center;
+
+      .switch {
+          margin-left: auto;
+      }
+
+      .icon {
+          font-size: 24px;
+          margin-right: 10px;
+          transition: all 0.3s ease;
+
+          &.spinning {
+              animation: spin 1s infinite linear;
+          }
+
+          &.fan-lit {
+              color: #32cd32; /* Màu xanh lá cây khi quạt bật */
+          }
+
+          &.light-lit {
+              color: #ffeb3b; /* Màu vàng khi đèn bật */
+          }
+
+          &.cool {
+              color: #00f; /* Màu lạnh khi điều hòa bật */
+          }
+      }
+
+      /* Định nghĩa hiệu ứng quay cho quạt */
+      @keyframes spin {
+          from {
+              transform: rotate(0deg);
+          }
+          to {
+              transform: rotate(360deg);
+          }
+      }
+  }
+
+  &:hover {
+      transform: translateY(-2px); /* Di chuyển thẻ lên một chút */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Tăng độ đậm của đổ bóng */
+  }
+}
